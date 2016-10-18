@@ -1,8 +1,8 @@
 # DataProcessTL
-This is a simple use module to process data with multi threads.
-You will need :
-  JDK 1.8
-  log4j2
+This is a simple use module to process data with multi threads.<br/>
+You will need :<br/>
+  * JDK 1.8
+  * log4j2
   
 Purpose:
   Sometimes we want to increase speed with processing data. We will use multi-threads to handle that.
