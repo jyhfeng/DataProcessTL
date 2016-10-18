@@ -31,8 +31,8 @@ We will demo a simple program,an addition from 1 to 1000(1+2+3+....+1000)
 	public class YourClass extends DataConsumer {   
 	@Override
 	public void service(Object obj, Map params) throws Exception {
-      this.getDataQueue().add(obj);
-  }
- }
+	  this.getDataQueue().add(obj);
+	  }
+	}
 
 3. set config and run it
