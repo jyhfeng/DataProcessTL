@@ -1,2 +1,18 @@
 # DataProcessTL
-simple use multi threads to process data
+This is a simple use module to process data with multi threads.
+You will need :
+  JDK 1.8
+  log4j2
+  
+Purpose:
+  Sometimes we want to increase speed with processing data. We will use multi-threads to handle that.
+  But deal with multi-threads well is not easy,especially rookies.
+  In order to solve this,write this module.
+  
+  There are two types : Single & Batch (they are all multi-threads)
+  The differents is: 
+  Single Type:
+    every thread do its job,when job is done,process flush();
+  Batch Type:
+    every thread do its job,when job is done,processed data will throw into a collection to wait,until times'up,
+    or reach the number you set,process flush();
