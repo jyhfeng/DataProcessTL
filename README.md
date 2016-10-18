@@ -13,8 +13,9 @@ You will need :<br/>
   The differents is: <br/>  
   
   Single Type:<br/>
-  <p>every thread do its job,when job is done,process flush();
-  Batch Type:
-    every thread do its job,when job is done,processed data will throw into a collection to wait,until times'up,
+  every thread do its job,when job is done,process flush();<br/>
+  
+  Batch Type:<br/>
+    every thread do its job,when job is done,processed data will throw into a collection to wait,until times'up,<br/>
     or reach the number you set,process flush();<br/>
   
