@@ -28,7 +28,7 @@ We will demo a simple program,an addition from 1 to 1000(1+2+3+....+1000)
    
 2. create your class to implement DataConsumer
 <blockquote>
->public class YourClass extends DataConsumer {
+> public class YourClass extends DataConsumer {
    
 @Override
 public void service(Object obj, Map params) throws Exception {
