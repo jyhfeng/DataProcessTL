@@ -12,9 +12,9 @@ You will need :<br/>
   There are two types : Single & Batch (they are all multi-threads)<br/>
   The differents is: <br/>
   
-  <pre>Single Type:<br/>
-  <p>every thread do its job,when job is done,process flush();<br/>
-  <pre>Batch Type:<br/>
-    every thread do its job,when job is done,processed data will throw into a collection to wait,until times'up,<br/>
+  <pre>Single Type:
+  <p>every thread do its job,when job is done,process flush();
+  <pre>Batch Type:
+    every thread do its job,when job is done,processed data will throw into a collection to wait,until times'up,
     or reach the number you set,process flush();<br/>
   
