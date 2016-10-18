@@ -10,9 +10,9 @@ You will need :<br/>
   In order to solve this,write this module.<br/>
   
   There are two types : Single & Batch (they are all multi-threads)<br/>
-  The differents is: <br/>
+  The differents is: <br/>  
   
-  <pre>Single Type:
+  Single Type:<br/>
   <p>every thread do its job,when job is done,process flush();
   Batch Type:
     every thread do its job,when job is done,processed data will throw into a collection to wait,until times'up,
