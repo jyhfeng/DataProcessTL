@@ -19,3 +19,23 @@ You will need :<br/>
   every thread do its job,when job is done,processed data will throw into a collection to wait,until times'up,<br/>
   or reach the number you set,process flush();<br/>
   
+As so far ,I believe everyone still confusing what I said, that' fine. 
+Let's see how to coding and reached your target.
+
+We will demo a simple program,an addition from 1 to 1000(1+2+3+....+1000)
+
+1. create your class to extend DataProcess
+   
+2. create your class to implement DataConsumer
+<p>public class Y extends DataConsumer {
+
+    long numCount = 0;
+    long spend;
+
+    @Override
+    public void service(Object obj, Map params) throws Exception {
+        this.getDataQueue().add(obj);
+        numCount++;
+    }
+    </p>
+3. set config and run it
