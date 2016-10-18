@@ -14,7 +14,7 @@ You will need :<br/>
   
   <pre>Single Type:
   <p>every thread do its job,when job is done,process flush();
-  <pre>Batch Type:
+  Batch Type:
     every thread do its job,when job is done,processed data will throw into a collection to wait,until times'up,
     or reach the number you set,process flush();<br/>
   
