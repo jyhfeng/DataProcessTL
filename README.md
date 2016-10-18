@@ -16,6 +16,6 @@ You will need :<br/>
   every thread do its job,when job is done,process flush();<br/>
   
   Batch Type:<br/>
-    every thread do its job,when job is done,processed data will throw into a collection to wait,until times'up,<br/>
+    <p>every thread do its job,when job is done,processed data will throw into a collection to wait,until times'up,</p><br/>
     or reach the number you set,process flush();<br/>
   
