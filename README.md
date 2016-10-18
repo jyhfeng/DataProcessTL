@@ -27,7 +27,8 @@ We will demo a simple program,an addition from 1 to 1000(1+2+3+....+1000)
 1. create your class to extend DataProcess
    
 2. create your class to implement DataConsumer
-<p>public class Y extends DataConsumer {
+<blockquote>
+    public class Y extends DataConsumer {
 
     long numCount = 0;
     long spend;
@@ -37,5 +38,5 @@ We will demo a simple program,an addition from 1 to 1000(1+2+3+....+1000)
         this.getDataQueue().add(obj);
         numCount++;
     }
-    </p>
+    </blockquote>
 3. set config and run it
