@@ -27,12 +27,12 @@ We will demo a simple program,an addition from 1 to 1000(1+2+3+....+1000)
 1. create your class to extend DataProcess
    
 2. create your class to implement DataConsumer
-> public class YourClass extends DataConsumer {
+ public class YourClass extends DataConsumer {
    
-@Override
-public void service(Object obj, Map params) throws Exception {
-    this.getDataQueue().add(obj);
-}
-}
+  @Override
+  public void service(Object obj, Map params) throws Exception {
+      this.getDataQueue().add(obj);
+  }
+ }
 
 3. set config and run it
