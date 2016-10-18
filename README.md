@@ -28,15 +28,14 @@ We will demo a simple program,an addition from 1 to 1000(1+2+3+....+1000)
    
 2. create your class to implement DataConsumer
 <blockquote>
-    public class Y extends DataConsumer {
-
-    long numCount = 0;
-    long spend;
-
-    @Override
-    public void service(Object obj, Map params) throws Exception {
-        this.getDataQueue().add(obj);
-        numCount++;
-    }
+    >public class Y extends DataConsumer {
+    >long numCount = 0;
+    
+    >@Override
+    >public void service(Object obj, Map params) throws Exception {
+    >    this.getDataQueue().add(obj);
+    >    numCount++;
+    >}
+    >}
     </blockquote>
 3. set config and run it
