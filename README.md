@@ -20,7 +20,7 @@ You will need :<br/>
   or reach the number you set,process flush();<br/>
   
 As so far ,I believe everyone still confusing what I said, that' fine. 
-Let's see how to coding and reached your target.
+et's see how to coding and reached your target.
 
 We will demo a simple program,an addition from 1 to 1000(1+2+3+....+1000)   
 1 create your class to extend DataProcess
@@ -28,9 +28,9 @@ We will demo a simple program,an addition from 1 to 1000(1+2+3+....+1000)
     public class SampleConsumer implement DataConsumer {
     	@Override
     	public void service(Object obj, Map params) throws Exception {
-    		this.getDataQueue().add(obj);
+   		this.getDataQueue().add(obj);
     	}
-    }
+   }
 2 create your class to extend DataProcess
 
     public class SampleProcess extends DataProcess {
@@ -43,3 +43,43 @@ We will demo a simple program,an addition from 1 to 1000(1+2+3+....+1000)
      }
     }
 3 set config and run it
+
+    List store = new ArrayList();
+    IntStream.range(0, 1000).forEach(v -> store.add(v));
+    //create params
+    Map params = new HashMap();
+    params.put("key1", "value1");
+    params.put("key2", "value2");
+    try {
+        System.out.println("~~~START~~~");
+        String tag = "test";
+        DataQueueCenter dqc = new DataQueueCenter();
+        dqc.createQueue(tag, null);
+    
+        //add data to queue
+        dqc.addData(tag, store.toArray());
+        
+        //new class which extends DataProcess
+        DataFlush dataFlush = new DataFlush();
+        dataFlush.setConsumerClassName(BatchDataConsumer.class.getName());
+        dataFlush.setDataQueueCenter(dqc);
+        dataFlush.setTag(tag);
+        dataFlush.setThreadType(ThreadType.BATCH_TYPE);
+        dataFlush.setParams(params);
+        dataFlush.setAddFail(false);
+        dataFlush.setThreadNumber(4);
+        dataFlush.setSleepTime(10);
+        dataFlush.setReleaseCpuControlLimit(100);
+        
+        //start multi threads to process
+        dataFlush.start();
+        //make a sleep
+        Thread.sleep(3000);
+        //send end tag to tell service ready to end the service
+        dataFlush.sendEndTag();
+        //when you process this method,the service will wait,until the data were processed.
+        dataFlush.waitTaskDone();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    System.out.println("~~~END~~~");
